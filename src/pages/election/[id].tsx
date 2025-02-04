@@ -63,7 +63,7 @@ const Index = () => {
     try {
       const res = await writeContractAsync({
         abi: votingabi,
-        address: "0x50a1068E756A13DE3C42633236c0eE75a308b6c5",
+        address: "0x113C3e49CdA48F3f7de343E0D4Dd327dAAeCfB0F",
         functionName: "vote",
         args: [router.query.id, votedCandidate],
         chain: holesky,
@@ -215,7 +215,7 @@ const Index = () => {
               <div>{candidate?.name}</div>
               <div>{candidate.contestantAddress}</div>
               <div>Votes: {Number(candidate?.votes)}</div>
-              {winner && (
+              {!winner && (
                 <button
                   style={{
                     padding: "8px",

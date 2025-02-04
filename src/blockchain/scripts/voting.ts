@@ -2,8 +2,8 @@ import { ethers } from "ethers";
 import votingAbi from '../abis/voting.abi.json'
 export const getElections=async()=>{
     try {
-        const provider=new ethers.providers.JsonRpcProvider('https://rpc-holesky.rockx.com')
-        const contract=new ethers.Contract('0x50a1068E756A13DE3C42633236c0eE75a308b6c5',votingAbi,provider)
+        const provider=new ethers.providers.JsonRpcProvider('https://eth-holesky.g.alchemy.com/v2/CW-1OsQTxd4jCJJQjHsTzPvG827ibygn')
+        const contract=new ethers.Contract('0x113C3e49CdA48F3f7de343E0D4Dd327dAAeCfB0F',votingAbi,provider)
         const elections=await contract.getAllPolls()
         return elections
     } catch (error) {
@@ -13,8 +13,8 @@ export const getElections=async()=>{
 
 export const getContestants=async(pollId:number)=>{
     try {
-        const provider=new ethers.providers.JsonRpcProvider('https://rpc-holesky.rockx.com')
-        const contract=new ethers.Contract('0x50a1068E756A13DE3C42633236c0eE75a308b6c5',votingAbi,provider)
+        const provider=new ethers.providers.JsonRpcProvider('https://eth-holesky.g.alchemy.com/v2/CW-1OsQTxd4jCJJQjHsTzPvG827ibygn')
+        const contract=new ethers.Contract('0x113C3e49CdA48F3f7de343E0D4Dd327dAAeCfB0F',votingAbi,provider)
         const contestants=await contract.getContestants(pollId)
         return contestants
     } catch (error) {
@@ -24,8 +24,8 @@ export const getContestants=async(pollId:number)=>{
 
 export const getWhiteListedVoters=async(pollId:number)=>{
     try {
-        const provider=new ethers.providers.JsonRpcProvider('https://rpc-holesky.rockx.com')
-        const contract=new ethers.Contract('0x50a1068E756A13DE3C42633236c0eE75a308b6c5',votingAbi,provider)
+        const provider=new ethers.providers.JsonRpcProvider('https://eth-holesky.g.alchemy.com/v2/CW-1OsQTxd4jCJJQjHsTzPvG827ibygn')
+        const contract=new ethers.Contract('0x113C3e49CdA48F3f7de343E0D4Dd327dAAeCfB0F',votingAbi,provider)
         const voters=await contract.getWhitelistedVoters(pollId)
         return voters
     } catch (error) {
@@ -35,8 +35,8 @@ export const getWhiteListedVoters=async(pollId:number)=>{
 
 export const getWinner=async(pollId:number)=>{
     try {
-        const provider=new ethers.providers.JsonRpcProvider('https://rpc-holesky.rockx.com')
-        const contract=new ethers.Contract('0x50a1068E756A13DE3C42633236c0eE75a308b6c5',votingAbi,provider)
+        const provider=new ethers.providers.JsonRpcProvider('https://eth-holesky.g.alchemy.com/v2/CW-1OsQTxd4jCJJQjHsTzPvG827ibygn')
+        const contract=new ethers.Contract('0x113C3e49CdA48F3f7de343E0D4Dd327dAAeCfB0F',votingAbi,provider)
         const voters=await contract.getWinner(pollId)
         return voters
     } catch (error) {

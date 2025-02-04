@@ -10,7 +10,9 @@ const Electiondashboard = () => {
     const fetchVal = async () => {
       const res = await getElections();
       if (res) {
-        setelections(res);
+        // Filter out deleted elections (assuming `isDeleted` is a property that marks deleted elections)
+        const activeElections = res.filter((election: any) => !election.deleted);
+        setelections(activeElections);
       }
     };
     fetchVal();
