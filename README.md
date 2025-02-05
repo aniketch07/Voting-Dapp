@@ -1,40 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Decentralized Voting Application
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This Decentralized Voting Application allows users to cast votes for their preferred candidates on the Ethereum blockchain. The smart contract is written in Solidity, and the frontend is developed using React. The application leverages Web3.js/Ethers.js to interact with the Ethereum blockchain and MetaMask for user authentication. This project aims to showcase blockchain concepts, smart contract development, and full-stack integration.
+
+## Features
+
+### Blockchain Development:
+- **Smart Contract**:
+  - Written in Solidity to facilitate voting operations on the blockchain.
+  - Deployed on the Ethereum testnet (Rinkeby or Ropsten).
+  - Handles:
+    - Registering and voting for candidates.
+    - Fetching candidates and vote counts.
+    - Ensuring only registered voters can vote (optional feature).
+  
+### Frontend Development:
+- **React Components**:
+  - `VotingForm`: A component for users to select a candidate and submit their vote.
+  - `CandidateList`: Displays a list of candidates and their vote counts in real time.
+  - `ResultDisplay`: Displays the final voting result and the current leader.
+
+- **State Management**:
+  - Utilizes React hooks (`useState`, `useEffect`) for state management.
+
+- **Functionality**:
+  - **Vote Submission**: Users can vote for a candidate by interacting with the Ethereum blockchain.
+  - **Voting Results**: Displays current voting results and the leader.
+  - **MetaMask Integration**: Allows authentication via MetaMask, enabling secure transactions on the blockchain.
+
+## Technologies Used
+
+- **Blockchain**: Ethereum
+- **Smart Contract Development**: Solidity
+- **Frontend**: React
+- **Blockchain Interaction**: Web3.js / Ethers.js
+- **Authentication**: MetaMask
+- **Testnet**: Rinkeby or Ropsten
+- **Storage**: IPFS (Optional)
+- **Testing**: Hardhat / Truffle for smart contract testing
+- **State Management**: React Hooks (useState, useEffect)
+
+## Installation
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/aniketch07/Voting-Dapp.git
+cd Voting-Dapp
 ```
+### 2. Install Dependencies
+Frontend:
+Make sure you have Node.js installed and then run:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+npm install
+```
+### 3. Run the Frontend
+Start the React frontend locally by running:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+npm start
+```
+The app will be accessible at http://localhost:3000. Connect your MetaMask wallet to interact with the app.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Testing
+Smart Contract Tests:
+Smart Contract is deployed at address 0x113C3e49CdA48F3f7de343E0D4Dd327dAAeCfB0F on Holesky Testnet
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+NOTE:
+```
+To add Holesky testnet to your metamask follow the following link: https://revoke.cash/learn/wallets/add-network/ethereum-holesky
+```
+Once you have added the Testnet to your metamask you can interact with the smart contract on 
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+https://holesky.etherscan.io/address/0x113c3e49cda48f3f7de343e0d4dd327daaecfb0f
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
